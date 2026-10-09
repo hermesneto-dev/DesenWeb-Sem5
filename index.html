@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetos, APIs e Assincronismo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 32px auto; padding: 0 16px; color: #1d2942; }
+    section { border: 1px solid #d8dfeb; border-radius: 12px; padding: 18px; margin: 18px 0; }
+    form { display: flex; gap: 8px; flex-wrap: wrap; }
+    input, button { padding: 9px 12px; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    #status { min-height: 24px; font-weight: 700; }
+    #resultado, #resultado-pokemon { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; }
+    dt { font-weight: 700; }
+    img { max-width: 160px; image-rendering: pixelated; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <h1>Consultas assíncronas</h1>
+
+  <section>
+    <h2>Buscador de CEP</h2>
+    <form id="formulario-cep">
+      <input id="cep" inputmode="numeric" maxlength="8" placeholder="Digite 8 números" required>
+      <button id="botao-cep" type="submit">Buscar CEP</button>
+    </form>
+    <p id="status" role="status"></p>
+    <dl id="resultado"></dl>
+    <h3>Histórico</h3>
+    <ul id="historico"></ul>
+  </section>
+
+  <section>
+    <h2>Mini Pokédex</h2>
+    <form id="formulario-pokemon">
+      <input id="pokemon" placeholder="Nome do Pokémon" required>
+      <button id="botao-pokemon" type="submit">Buscar Pokémon</button>
+    </form>
+    <p id="status-pokemon" role="status"></p>
+    <div id="resultado-pokemon"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
